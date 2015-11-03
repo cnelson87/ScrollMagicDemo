@@ -1,0 +1,97 @@
+//
+// Layout
+// -----------------------------------------------------
+
+
+html, body {
+	width: 100%;
+	max-width: 100%;
+	min-height: 100%;
+	overflow-x: hidden;
+}
+
+#wrapper {
+	width: 100%;
+	min-width: $min-width;
+	min-height: 100vh;
+	position: relative;
+}
+
+#content {
+	width: 100%;
+	min-height: 100vh;
+	position: relative;
+	z-index: 1;
+
+	.content-section {
+		width: 100%;
+		min-height: 100vh;
+		background: $white;
+		position: relative;
+
+		.content-inner {
+			width: $mobile-container-width;
+			min-width: 320px;
+			height: 40%;
+			min-height: 320px;
+			max-height: 720px;
+			background: $gray-xlight;
+			border-radius: 10px;
+			margin: auto;
+			padding: 20px $mobile-gutter-width;
+			position: absolute;
+			left: 0; right: 0;
+			top: 0; bottom: 0;
+		}
+
+	}
+
+}
+
+
+// Mobile
+@media (max-width: $mobile-max) {
+	#content {
+		.content-section {
+			.content-inner {
+				max-width: $mobile-container-max-width;
+			}
+		}
+	}
+}
+
+// Tablet
+@media (min-width: $tablet-min) and (max-width: $tablet-max) {
+	#content {
+		.content-section {
+			.content-inner {
+				width: $tablet-container-width;
+				padding: 20px $tablet-gutter-width;
+			}
+		}
+	}
+}
+
+// Desktop
+@media (min-width: $desktop-min) {
+	#content {
+		.content-section {
+			.content-inner {
+				width: $desktop-container-width;
+				padding: 20px $desktop-gutter-width;
+			}
+		}
+	}
+}
+
+// Desktop Wide
+@media (min-width: $desktop-lrg) {
+	#content {
+		.content-section {
+			.content-inner {
+				width: $desktop-wide-container-width;
+				max-width: 1280px;
+			}
+		}
+	}
+}

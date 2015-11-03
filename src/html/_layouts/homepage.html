@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+{{> head}}
+</head>
+<body id="homepage" class="homepage">
+
+<div id="wrapper">
+
+	<nav id="mainnav">
+		<ul>
+			<li><a id="nav1" href="#content1">1</a></li>
+			<li><a id="nav2" href="#content2">2</a></li>
+			<li><a id="nav3" href="#content3">3</a></li>
+			<li><a id="nav4" href="#content4">4</a></li>
+			<li><a id="nav5" href="#content5">5</a></li>
+			<li><a id="nav6" href="#content6">6</a></li>
+		</ul>
+	</nav>
+
+	<div id="content">
+
+		{{#block "content"}}
+		<h1>Homepage Content</h1>
+		{{/block}}
+
+	</div>
+
+</div>
+
+</body>
+</html>

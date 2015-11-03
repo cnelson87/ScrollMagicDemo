@@ -1,0 +1,70 @@
+//
+// MainNav View
+// -----------------------------------------------------
+
+
+#mainnav {
+	width: 30px;
+	background: $white;
+	text-align: center;
+	position: fixed;
+	left: 20px;
+	top: 20px;
+	z-index: 2;
+
+	> ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		> li {
+			margin: 0;
+			padding: 0;
+		}
+
+		a {
+			width: 100%;
+			display: inline-block;
+			padding: 5px;
+			color: $gray-med;
+			text-decoration: none;
+			&.active, &:hover, &:focus {
+				color: $white;
+			}
+		}
+
+		a#nav1 {
+			&.active, &:hover, &:focus {
+				background: lighten(yellow, 20%);
+				color: $gray-med;
+			}
+		}
+		a#nav2 {
+			&.active, &:hover, &:focus {
+				background: lighten(red, 20%);
+			}
+		}
+		a#nav3 {
+			&.active, &:hover, &:focus {
+				background: lighten(green, 40%);
+			}
+		}
+		a#nav4 {
+			&.active, &:hover, &:focus {
+				background: lighten(blue, 30%);
+			}
+		}
+		a#nav5 {
+			&.active, &:hover, &:focus {
+				background: lighten(orange, 15%);
+			}
+		}
+		a#nav6 {
+			&.active, &:hover, &:focus {
+				background: lighten(purple, 30%);
+			}
+		}
+
+	}
+
+}

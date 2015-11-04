@@ -9,7 +9,6 @@ const MainNavView = Backbone.View.extend({
 	},
 
 	initialize: function(options) {
-		// this.render();
 		this.controller = options.controller;
 		this.scrollController = options.controller.scrollController;
 
@@ -24,10 +23,6 @@ const MainNavView = Backbone.View.extend({
 		var $target = $(event.currentTarget);
 		var id = $target.attr('href');
 		this.scrollController.scrollTo(id);
-	},
-
-	render: function() {
-
 	}
 
 });

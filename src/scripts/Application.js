@@ -9,7 +9,7 @@ import PubSub from 'utilities/PubSub';
 import breakpointChangeEvent from 'utilities/breakpointChangeEvent';
 import AppState from 'models/AppState';
 import MainNavView from 'views/MainNavView';
-// import HomepageView from 'views/Homepage/HomepageView';
+// import HomepageView from 'views/HomepageView';
 
 const Application = {
 

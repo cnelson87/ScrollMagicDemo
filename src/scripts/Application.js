@@ -46,15 +46,53 @@ const Application = {
 	},
 
 	initScrollControl: function() {
+		// console.log('initScrollControl');
+
+		var jumpLinkStart = function(event) {
+			console.log("jumpLinkScenes:start:", event);
+		};
+
+		var jumpLinkEnter = function(event) {
+			console.log("jumpLinkScenes:enter:", event);
+		};
+
+		var jumpLinkEnd = function(event) {
+			console.log("jumpLinkScenes:end:", event);
+		};
+
+		var jumpLinkLeave = function(event) {
+			console.log("jumpLinkScenes:leave:", event);
+		};
+
+		var toggleNavStart = function(event) {
+			console.log("toggleNavScenes:start:", event);
+		};
+
+		var toggleNavEnter = function(event) {
+			console.log("toggleNavScenes:enter:", event);
+		};
+
+		var toggleNavEnd = function(event) {
+			console.log("toggleNavScenes:end:", event);
+		};
+
+		var toggleNavLeave = function(event) {
+			console.log("toggleNavScenes:leave:", event);
+		};
 
 		this.scrollController = new ScrollMagic.Controller({});
 		this.jumpLinkScenes = [];
 		this.toggleNavScenes = [];
+
 		for (var i=0, len = this.$panels.length; i<len; i++) {
 			this.jumpLinkScenes[i] = new ScrollMagic.Scene({
 					triggerElement: this.$panels.eq(i),
 					triggerHook: 'onLeave'
 				})
+				// .on("start", jumpLinkStart)
+				// .on("enter", jumpLinkEnter)
+				// .on("end", jumpLinkEnd)
+				// .on("leave", jumpLinkLeave)
 				.addIndicators()
 				.setPin(this.$panels.eq(i))
 				.addTo(this.scrollController);
@@ -63,6 +101,10 @@ const Application = {
 					triggerHook: 0.25,//'onCenter',
 					duration: '100%'
 				})
+				// .on("start", toggleNavStart)
+				// .on("enter", toggleNavEnter)
+				// .on("end", toggleNavEnd)
+				// .on("leave", toggleNavEnd)
 				.addIndicators()
 				.setClassToggle(this.$links.eq(i), 'active')
 				.addTo(this.scrollController);

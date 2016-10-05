@@ -1,4 +1,3 @@
-
 /**
  * watch
  * Run predefined tasks whenever watched file patterns are added, changed or deleted.
@@ -50,9 +49,9 @@ module.exports = function (grunt) {
 			tasks: ['browserify:dev']
 		},
 
-		images: {
-			files: ['<%= sourceImages %>/**/*.*'],
-			tasks: ['newer:copy:images']
+		assets: {
+			files: ['<%= sourceAssets %>/**/*.*'],
+			tasks: ['newer:copy:assets']
 		}
 
 	};

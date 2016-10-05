@@ -1,10 +1,13 @@
 /**
- * Application Initializer
- * @author Chris Nelson
+ * initialize
  */
 
-import Application from './Application';
+import 'babel-polyfill';
 
-$(function() {
+import handlebarsHelpers from 'config/handlebarsHelpers';
+import Application from './Application.js';
+
+document.addEventListener("DOMContentLoaded", function(event) {
+	handlebarsHelpers();
 	Application.initialize();
 });

@@ -1,4 +1,3 @@
-
 /**
  * bower
  * Copy bower installed components to dist folder.

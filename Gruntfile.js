@@ -1,17 +1,20 @@
-
 module.exports = function(grunt) {
 
 	'use strict';
 
-	var path		= require('path');
-	var cwd			= process.cwd();
-	var pkg			= grunt.file.readJSON('package.json');
+	var path = require('path');
+	var cwd = process.cwd();
+	var pkg = grunt.file.readJSON('package.json');
 
+	/**
+	 * GRUNT INIT
+	 */
 	require('load-grunt-config')(grunt, {
+
 		configPath: path.join(cwd,'grunt_tasks'),
 		init: true,
-		data: {
 
+		data: {
 			// Pkg data
 			pkg			: pkg,
 			pkgName		: pkg.name,
@@ -26,7 +29,6 @@ module.exports = function(grunt) {
 			sourceAssets		: '<%= sourcePath %>/assets',
 			sourceData			: '<%= sourcePath %>/api',
 			sourceHTML			: '<%= sourcePath %>/html',
-			sourceIncludes		: '<%= sourceHTML %>/_includes',
 			sourceAudio			: '<%= sourceAssets %>/audio',
 			sourceVideo			: '<%= sourceAssets %>/video',
 			sourceFonts			: '<%= sourceAssets %>/fonts',
@@ -62,14 +64,18 @@ module.exports = function(grunt) {
 			tempPath			: './_builds/temp'
 
 		},
+
 		loadGruntTasks: {
 			config: require('./package.json'),
 			scope: 'devDependencies',
 			pattern: 'grunt-*'
 		}
+
 	});
 
-	// /Register custom tasks
+	/**
+	 * Register Custom tasks
+	 */
 	grunt.registerTask('build', 'generate a build', function(target) {
 		var target = (target === 'dev') ? 'dev' : 'dist';
 		var tasks = [
@@ -88,11 +94,16 @@ module.exports = function(grunt) {
 		];
 		// optimize for dist build only
 		if (target === 'dist') {
-			tasks.push('cssmin');
-			tasks.push('uglify');
+			tasks.push('htmlmin:dist');
+			tasks.push('cssmin:dist');
+			tasks.push('uglify:dist');
 		}
 		grunt.task.run(tasks);
 	});
+
+	/**
+	 * Create a dev build and start a static server from the 'local' directory
+	 */
 	grunt.registerTask('run', ['build:dev', 'connect', 'watch']);
 
 };

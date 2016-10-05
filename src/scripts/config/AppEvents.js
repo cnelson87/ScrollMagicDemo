@@ -1,6 +1,6 @@
 /**
- * Application Events
- * @author Chris Nelson
+ * AppEvents
+ * @description: Defines global application events
  */
 
 const AppEvents = {
@@ -11,6 +11,7 @@ const AppEvents = {
 	WINDOW_SCROLL_START:	'scrollStart',
 	WINDOW_SCROLL_STOP:		'scrollStop',
 	BREAKPOINT_CHANGE:		'breakpointChange',
+	TRACKING_STATE:			'trackingState',
 
 	// specific events
 	CUSTOM_EVENT:			'customEvent'

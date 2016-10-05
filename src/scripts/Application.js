@@ -41,7 +41,7 @@ const Application = {
 
 		this.initViews();
 
-		this.bindEvents();
+		this._addEventListeners();
 
 	},
 
@@ -126,11 +126,15 @@ const Application = {
 		// });
 	},
 
-	bindEvents: function() {
+	_addEventListeners: function() {
 		this.$window.on('resize', function(event) {
 			this.$panels.css({width: '100%'});
 		}.bind(this));
 		PubSub.on(AppEvents.BREAKPOINT_CHANGE, this.onBreakpointChange, this);
+	},
+
+	_removeEventListeners: function() {
+		PubSub.off(AppEvents.BREAKPOINT_CHANGE, this.onBreakpointChange, this);
 	},
 
 	onBreakpointChange: function(params) {

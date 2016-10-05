@@ -1,4 +1,3 @@
-
 /**
  * copy
  * Copy files and folders.
@@ -9,6 +8,7 @@ module.exports = function (grunt) {
 	return {
 
 		data: {
+			// JSON Data
 			files: [{
 				cwd: '<%= sourceData %>',
 				src: '**/*.json',
@@ -17,59 +17,42 @@ module.exports = function (grunt) {
 			}]
 		},
 
-		images: {
+		assets: {
+			// images, fonts, videos...
 			files: [{
-				cwd: '<%= sourceImages %>',
+				cwd: '<%= sourceAssets %>',
 				src: '**/*.*',
-				dest: '<%= localImages %>',
+				dest: '<%= localAssets %>',
 				expand: true
 			}]
 		},
 
 		dev: {
-			files: [
-				{
-					cwd: '<%= sourceData %>',
-					src: '**/*.json',
-					dest: '<%= localData %>',
-					expand: true
-				},
-				{
-					cwd: '<%= sourceFonts %>',
-					src: '**/*.*',
-					dest: '<%= localFonts %>',
-					expand: true
-				},
-				{
-					cwd: '<%= sourceImages %>',
-					src: '**/*.*',
-					dest: '<%= localImages %>',
-					expand: true
-				}
-			]
+			files: [{
+				cwd: '<%= sourceData %>',
+				src: '**/*.json',
+				dest: '<%= localData %>',
+				expand: true
+			},{
+				cwd: '<%= sourceAssets %>',
+				src: '**/*.*',
+				dest: '<%= localAssets %>',
+				expand: true
+			}]
 		},
 
 		dist: {
-			files: [
-				{
-					cwd: '<%= sourceData %>',
-					src: '**/*.json',
-					dest: '<%= publicData %>',
-					expand: true
-				},
-				{
-					cwd: '<%= sourceFonts %>',
-					src: '**/*.*',
-					dest: '<%= publicFonts %>',
-					expand: true
-				},
-				{
-					cwd: '<%= sourceImages %>',
-					src: '**/*.*',
-					dest: '<%= publicImages %>',
-					expand: true
-				}
-			]
+			files: [{
+				cwd: '<%= sourceData %>',
+				src: '**/*.json',
+				dest: '<%= publicData %>',
+				expand: true
+			},{
+				cwd: '<%= sourceAssets %>',
+				src: '**/*.*',
+				dest: '<%= publicAssets %>',
+				expand: true
+			}]
 		}
 
 	};

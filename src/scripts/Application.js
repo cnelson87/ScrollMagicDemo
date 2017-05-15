@@ -104,7 +104,7 @@ const Application = {
 				// .on("start", toggleNavStart)
 				// .on("enter", toggleNavEnter)
 				// .on("end", toggleNavEnd)
-				// .on("leave", toggleNavEnd)
+				// .on("leave", toggleNavLeave)
 				.addIndicators()
 				.setClassToggle(this.$links.eq(i), 'active')
 				.addTo(this.scrollController);
